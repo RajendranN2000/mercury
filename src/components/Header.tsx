@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { FiArrowUpRight, FiMenu, FiX } from "react-icons/fi";
+import { IoIosArrowDown } from "react-icons/io";
 
 const Header: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const MenuTitle = (title: string) => (
-    <div className="text-xs lg:text-sm text-[#0E0E11]">{title}</div>
+  const MenuTitle = (title: string,dropDown?:boolean) => (
+    <div className="text-xs lg:text-sm text-[#0E0E11] flex items-center gap-1">{title}<IoIosArrowDown className={`h-4 mt-1 ${dropDown?"block":"hidden"}`}/></div>
   );
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
@@ -16,7 +17,7 @@ const Header: React.FC = () => {
         <img className="h-6 lg:h-8 w-auto" src="/assets/images/logo.png" alt="Logo" />
         <div className="hidden md:flex gap-8 justify-center">
           {MenuTitle("Product")}
-          {MenuTitle("Compare")}
+          {MenuTitle("Compare",true)}
           {MenuTitle("Pricing")}
           {MenuTitle("Contact")}
         </div>
@@ -27,7 +28,7 @@ const Header: React.FC = () => {
           </div>
           <div className="bg-[#0E0E11] rounded-full flex items-center gap-2 py-2 lg:py-3 px-3 lg:px-5">
             <div className="text-[#FFFFFF] text-xs lg:text-sm">Let's Talk</div>
-            <FiArrowUpRight className="h-4 w-4 text-[#FFFFFF]" />
+            <FiArrowUpRight className="h-3 w-3 text-[#FFFFFF]" />
           </div>
         </div>
 
