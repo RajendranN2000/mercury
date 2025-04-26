@@ -62,7 +62,7 @@ const Banner:React.FC = () => {
         <div className="w-full lg:w-1/2 pr-4 relative">
           <div className="flex justify-end">
             <img
-              className="h-full max-h-[100vh] w-[80%]"
+              className="h-full lg:min-h-[700px] max-h-[100vh] w-[80%]"
               src="/assets/images/gradient-bg.png"
               alt=""
             />
