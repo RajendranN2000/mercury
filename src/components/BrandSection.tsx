@@ -10,21 +10,21 @@ const brands = [
 
 const BrandSection: React.FC = () => {
   return (
-    <div className="text-white py-16 text-center">
-      <p className="text-base text-[#3B3C45] mb-12">
+    <div className="text-white py-8 lg:py-16 text-center px-6 md:px-12 lg:px-20 2xl:px-32">
+      <p className="text-sm lg:text-base text-[#3B3C45] mb-4 lg:mb-12">
         The platform fueling today’s high-growth revenue teams
       </p>
-      <div className="flex justify-center items-center gap-12 mb-12">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-0 lg:gap-12 mb-4 lg:mb-12">
         {brands.map((brand) => (
           <img
             key={brand.name}
             src={brand.src}
             alt={brand.alt}
-            className="h-[112px] w-auto grayscale "
+            className="h-[60px]  2xl:h-[112px] w-auto grayscale "
           />
         ))}
       </div>
-      <button className="bg-white text-black px-6 py-3 border border-[#E8EAED] rounded-full text-sm font-medium">
+      <button className="bg-white text-black px-4 lg:px-6 py-3 border border-[#E8EAED] rounded-full text-xs lg:text-sm font-medium">
         See Customer Reviews
       </button>
     </div>

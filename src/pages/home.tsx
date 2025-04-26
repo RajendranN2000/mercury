@@ -14,17 +14,17 @@ const Home = () => {
   return (
     <div className="">
       <Banner />
-      <BrandSection/>
-      <FeatureSection/>
-      <SmartToolsSection/>
-      <Management/>
-      <StartSaving/>
-      <OurSolution/>
-      <FaqSection/>
-      <Testimonials/>
-      <Newsletter/>
+      <BrandSection />
+      <FeatureSection />
+      <SmartToolsSection />
+      <Management />
+      <StartSaving />
+      <OurSolution />
+      <FaqSection />
+      <Testimonials />
+      <Newsletter />
       <Footer/>
     </div>
   );
 };
-export default Home
+export default Home;

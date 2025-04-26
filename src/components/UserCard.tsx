@@ -9,7 +9,7 @@ interface UserCardProps {
 
 const UserCard: React.FC<UserCardProps> = ({ name, company, rating, avatarUrl }) => {
   return (
-    <div className="w-80 p-4 rounded-xl shadow-md bg-white space-y-4">
+    <div className="w-64 lg:w-80 p-4 rounded-xl shadow-md bg-white space-y-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <img src={avatarUrl} alt={name} className="w-10 h-10 rounded-full" />

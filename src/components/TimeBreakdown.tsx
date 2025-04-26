@@ -10,20 +10,20 @@ const TimeBreakdown: React.FC<TimeBreakdownProps> = ({
   totalMinutes
 }) => {
   return (
-    <div className="bg-white rounded-2xl shadow-md p-6 w-[350px]">
+    <div className="bg-white rounded-2xl shadow-md p-6 lg:w-[350px]">
       <h2 className="text-sm font-semibold text-[#0E0E11]">
         {totalHours} <span className="font-normal text-[#6D7079] mr-1">Hours</span>{' '}
         {totalMinutes} <span className="font-normal text-[#6D7079]">Minutes in total</span>
       </h2>
-      <div className="flex mt-4 space-x-2 h-3">
+      <div className="flex mt-4 space-x-2 h-2 lg:h-3">
         <div
-          className="bg-[#E1E2E5] w-16 rounded-full"
+          className="bg-[#E1E2E5] w-6 lg:w-16 rounded-full"
         ></div>
         <div
-          className="bg-[#87F7DC] w-28 rounded-full"
+          className="bg-[#87F7DC] w-12 lg:w-28 rounded-full"
         ></div>
         <div
-          className="bg-[#8792F7] w-44 rounded-full"
+          className="bg-[#8792F7] w-24 lg:w-44 rounded-full"
         ></div>
       </div>
 

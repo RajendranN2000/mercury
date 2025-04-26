@@ -5,31 +5,31 @@ import React from "react";
 const Management:React.FC = () => {
   const DeviceCard = (title: string) => {
     return (
-      <div className="bg-[#F0F1FE] rounded-full text-[#8792F7] py-2 px-5 text-xs">
+      <div className="bg-[#F0F1FE] rounded-full text-[#8792F7] py-2 px-3 lg:px-5 text-[10px] lg:text-xs">
         {title}
       </div>
     );
   };
   return (
-    <div className="flex px-32 items-center py-12">
-      <div className="w-1/2 relative">
-        <div className="w-1/2 relative ml-24">
+    <div className="flex flex-col-reverse md:flex-row px-6 md:px-12 lg:px-20 2xl:px-32 gap-4 items-center py-6 lg:py-12">
+      <div className="md:w-1/2 relative">
+        <div className="relative 2xl:ml-24">
           <img
-            className="w-[300px]"
+            className="w-[340px] max-h-[450px] lg:max-h-auto"
             src="/assets/images/smarttools/Background.png"
             alt=""
           />
-          <div className="absolute top-12 left-12">
-            <div className="bg-[#FFFFFF] rounded-xl p-4 shadow-md">
-              <div className="">Device and Platform</div>
-              <div className="flex gap-3 mt-4">
+          <div className="absolute top-12 left-0 lg:left-12 w-full flex flex-col items-center lg:items-start px-8 lg:px-0">
+            <div className="bg-[#FFFFFF] rounded-xl p-4 shadow-md w-[300px] lg:w-auto">
+              <div className="text-xs lg:text-base">Device and Platform</div>
+              <div className="flex gap-2 lg:gap-3 mt-4">
                 {DeviceCard("Android")}
                 {DeviceCard("IOS")}
                 {DeviceCard("Windows")}
                 {DeviceCard("Linux")}
               </div>
             </div>
-          <div className="ml-24 mt-8">
+          <div className="lg:ml-24 mt-8">
             <div className="bg-[#FFFFFF] shadow-md rounded-xl p-4 w-[300px]">
               <div className="flex justify-between items-center">
                 <div className="text-[#0E0E11] text-sm font-semibold">
@@ -78,7 +78,7 @@ const Management:React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="w-1/2">
+      <div className="md:w-1/2">
         <ReminderManagement />
       </div>
     </div>

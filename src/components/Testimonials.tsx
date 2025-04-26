@@ -55,37 +55,37 @@ const testimonials: Testimonial[] = [
 
 const Testimonials: React.FC = () => {
   return (
-    <div className="testimonial-bg flex items-center justify-center px-32 py-20">
+    <div className="testimonial-bg flex items-center justify-center px-6 md:px-12 lg:px-20 2xl:px-32 py-6 lg:py-20">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl w-full">
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
             className="bg-white p-6 rounded-2xl shadow-md flex flex-col justify-between"
           >
-            <p className="text-[#2B2B31] text-base mb-4">
+            <p className="text-[#2B2B31] text-sm lg:text-base mb-4">
               "{testimonial.text}"
             </p>
             <div className="relative items-center">
               <div className="w-full h-12"></div>
-              <div className="absolute left-0 top-0">
+              <div className="absolute left-0 top-1 lg:top-0">
                 <img
                   src={testimonial.logo}
-                  className="h-12 w-12 rounded-full"
+                  className="h-8 w-8 lg:h-12 lg:w-12 rounded-full"
                   alt="user1"
                 />
               </div>
-              <div className="absolute left-8 top-0">
+              <div className="absolute left-6 lg:left-8 top-1 lg:top-0">
                 <img
                   src={testimonial.avatar}
-                  className="h-12 w-12 rounded-full"
+                  className="h-8 w-8 lg:h-12 lg:w-12 rounded-full"
                   alt="user2"
                 />
               </div>
-              <div className="absolute left-24 top-1">
-                <p className="text-[#3B3C45] text-base">
+              <div className="absolute left-16 lg:left-24 top-0 lg:top-1">
+                <p className="text-[#3B3C45] text-sm lg:text-base">
                   {testimonial.name}
                 </p>
-                <p className="text-[#6D7079] text-xs">{testimonial.title}</p>
+                <p className="text-[#6D7079] text-[10px] lg:text-xs">{testimonial.title}</p>
               </div>
             </div>
           </div>
