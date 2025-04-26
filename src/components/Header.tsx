@@ -1,23 +1,51 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FiArrowUpRight, FiMenu, FiX } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
 
 const Header: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const MenuTitle = (title: string,dropDown?:boolean) => (
-    <div className="text-xs lg:text-sm text-[#0E0E11] flex items-center gap-1">{title}<IoIosArrowDown className={`h-4 mt-1 ${dropDown?"block":"hidden"}`}/></div>
+  const MenuTitle = (title: string, dropDown?: boolean) => (
+    <div className="text-xs lg:text-sm text-[#0E0E11] flex items-center gap-1">
+      {title}
+      <IoIosArrowDown className={`h-4 mt-1 ${dropDown ? "block" : "hidden"}`} />
+    </div>
   );
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <div className="w-full flex justify-between items-center py-6 px-6 md:px-12">
-        <img className="h-6 lg:h-8 w-auto" src="/assets/images/logo.png" alt="Logo" />
+      <div
+        className={`fixed z-20 w-full flex justify-between items-center py-6 lg:py-8 px-6 md:px-12 transition-all duration-300 ${
+          isScrolled ? "bg-white shadow-md" : "bg-transparent"
+        }`}
+      >
+        <img
+          className="h-6 lg:h-8 w-auto"
+          src="/assets/images/logo.png"
+          alt="Logo"
+        />
         <div className="hidden md:flex gap-8 justify-center">
           {MenuTitle("Product")}
-          {MenuTitle("Compare",true)}
+          {MenuTitle("Compare", true)}
           {MenuTitle("Pricing")}
           {MenuTitle("Contact")}
         </div>
@@ -38,9 +66,9 @@ const Header: React.FC = () => {
       </div>
 
       <div
-        className={`fixed top-0 right-0 h-full w-full min-h-[100vh] z-10 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50",
-           ${isSidebarOpen ? "translate-x-0" : "translate-x-full"}  
-        `}
+        className={`fixed z-30 top-0 right-0 h-full w-full min-h-[100vh] bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
+          isSidebarOpen ? "translate-x-0" : "translate-x-full"
+        }`}
       >
         <div className="flex justify-between items-center p-6 border-b">
           <img

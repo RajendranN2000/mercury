@@ -1,4 +1,5 @@
 import React from "react";
+import { IoIosStar } from "react-icons/io";
 
 interface UserCardProps {
   name: string;
@@ -7,7 +8,12 @@ interface UserCardProps {
   avatarUrl: string;
 }
 
-const UserCard: React.FC<UserCardProps> = ({ name, company, rating, avatarUrl }) => {
+const UserCard: React.FC<UserCardProps> = ({
+  name,
+  company,
+  rating,
+  avatarUrl,
+}) => {
   return (
     <div className="w-64 lg:w-80 p-4 rounded-xl shadow-md bg-white space-y-4">
       <div className="flex items-center justify-between">
@@ -26,9 +32,9 @@ const UserCard: React.FC<UserCardProps> = ({ name, company, rating, avatarUrl })
       <div className="text-sm">
         <p className="text-[#0E0E11]">Total Rating</p>
         <div className="flex items-center gap-1 mt-1">
-          <span className="text-[#8792F7] text-lg">★</span>
+          <IoIosStar className="h-4 w-4 text-[#8792F7]" />
           <span className="font-semibold text-[#6D7079]">{rating}/5</span>
-          <span className="text-gray-400 text-sm">(overall {rating})</span>
+          <span className="text-[#6D7079] text-sm">(overall {rating})</span>
         </div>
       </div>
 
